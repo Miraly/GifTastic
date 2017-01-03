@@ -2,11 +2,25 @@ var teams = [
 	{team: "Baltimore Ravens",
 	 img: 
 	}, 
-			 "Chicago Bears", 
-			 "Pittsburgh Steelers", 
-			 "Green Bay Packers", 
-			 "Indianapolis Colts", 
-			 "Carolina Panthers", 
+	{team: "Chicago Bears",
+	 img:
+	},
+	{team: "Pittsburgh Steelers",
+	 img: 
+	}, 
+	{team: "Green Bay Packers",
+	 img: 
+	}, 
+	{team: "Indianapolis Colts",
+	 img: 
+	}, 
+	{team: "Carolina Panthers",
+	 img: 
+	}, 
+			 , 
+			 , 
+			 , 
+			 , 
 			 "New England Patriots", 
 			 "New Orleans Saints", 
 			 "New York Jets", 

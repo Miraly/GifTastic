@@ -35,7 +35,7 @@ body {
 }
 
 .teams-buttons {
-	width: 46%;
+	width: 36%;
 	margin: 2%;
 	float: left;
 }
@@ -46,7 +46,6 @@ button {
 	margin: 7px;
 	font-family: 'Cutive', serif;
 	font-size: 16px;
-	color: #979090;
 	border-radius: 3px;
 	background-color: #A7A7A7; 
     border: none;
@@ -65,7 +64,6 @@ label {
 #add-team {
 	font-family: 'Cutive', serif;
 	font-size: 12px;
-	color: #979090;
 	border-radius: 3px;
 	background-color: #A7A7A7; 
     border: none;
@@ -78,5 +76,10 @@ label {
 .gifs {
 	float: left;
 	margin: 2%;
-	width: 46%;
+	width: 56%;
+}
+
+.gifStyle {
+	border: #DCDCDC 1px solid;
+	margin: 0px 15px 15px 15px;
 }
