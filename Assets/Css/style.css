@@ -1,0 +1,82 @@
+body {
+	background-image: url(../Images/bg.png);
+	background-position: bottom;
+	background-color: #000000;
+	background-repeat: no-repeat;
+	font-family: 'Cutive', serif;
+}
+
+.header {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+.logo {
+	float: left;
+}
+
+.title {
+	float: left;
+	font-size: 40px;
+	color: #FFFFFF;
+	margin-top: 50px;
+}
+.form {
+	clear: both;
+	margin: 30px;
+	text-align: center;
+}
+
+.row {
+	clear: both;
+	width: 100%;
+}
+
+.teams-buttons {
+	width: 46%;
+	margin: 2%;
+	float: left;
+}
+
+button {
+	width: 200px;
+	height: 50px;
+	margin: 7px;
+	font-family: 'Cutive', serif;
+	font-size: 16px;
+	color: #979090;
+	border-radius: 3px;
+	background-color: #A7A7A7; 
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+	line-height: 1.1;
+ }
+
+label {
+	margin: 10px;
+	color: #FFFFFF;
+}
+
+#add-team {
+	font-family: 'Cutive', serif;
+	font-size: 12px;
+	color: #979090;
+	border-radius: 3px;
+	background-color: #A7A7A7; 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+	margin-left: 10px;
+}
+
+.gifs {
+	float: left;
+	margin: 2%;
+	width: 46%;
+}
