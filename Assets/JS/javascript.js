@@ -1,9 +1,12 @@
 var teams = ["Baltimore Ravens", "Chicago Bears", "Pittsburgh Steelers", "Green Bay Packers", "Indianapolis Colts", "Carolina Panthers", "New England Patriots", "New Orleans Saints", "New York Jets", "New York Giants"];
 
+var gifUrl = [];
+
+
 $(document).ready(function() {
 	function renderButtons() {
 		$(".teams-buttons").empty();
-       
+		     
         for (var i = 0; i < teams.length; i++) {
       
           var a = $("<button>");
@@ -26,15 +29,13 @@ $(document).ready(function() {
 		 
 //    		var form = document.getElementById("form");                      trying to clear input
 //		  form.reset();
-		  
-		  
-      });
-
-      
+	 });
+  
      renderButtons();
 		
 	function displayGif() {
 		$(".gifs").empty();
+		gifUrl = [];
 		var team = $(this).attr("data-name");
 		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + team + "&api_key=dc6zaTOxFJmzC";
        
@@ -44,23 +45,27 @@ $(document).ready(function() {
         }).done(function(response) {
 			console.log(response);
 			
-		for (var i = 0; i < 10; i++) {
-			var imgUrl = response.data[i].images.fixed_width_still.url;
-			var gifUrl = response.data[i].images.fixed_width.url;
-        	var gifImage = $("<img>");
+			for (var i = 0; i < 10; i++) {
+				var imgUrl = response.data[i].images.fixed_width_still.url;
+				gifUrl.push(response.data[i].images.fixed_width.url);
+				var gifImage = $("<img>");
 
-        //creating attributes for img tag
-        gifImage.attr("src", imgUrl);
-        gifImage.attr("alt", "NFL Team");
-		gifImage.addClass("gifStyle");
+				//creating attributes for img tag
+				gifImage.attr("src", imgUrl);
+				gifImage.attr("alt", "NFL Team");
+				gifImage.attr("id", i);
+				gifImage.addClass("gifStyle");
 
-        //displaying img tag 
-        $(".gifs").prepend(gifImage);
+				//displaying img tag 
+				$(".gifs").prepend(gifImage);
+
+				$(gifImage).on("click", function() {
+					$(this).attr("src", gifUrl[$(this).attr('id')]);
+				});	
 			
-		}	
+			}
 		});
-
-      }
+     }
 	
 	 $(document).on("click", ".teams", displayGif);
 	
