@@ -23,6 +23,7 @@ $(document).ready(function() {
         // "Enter" instead of clicking the button if desired
         event.preventDefault();
 		  var teamName = $("#team-input").val();
+		  teamName.attr("data-name", $("#team-input").val());
 		  teams.push(teamName);
       
         renderButtons();
