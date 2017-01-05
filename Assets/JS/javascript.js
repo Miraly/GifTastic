@@ -34,10 +34,9 @@ $(document).ready(function() {
      renderButtons();
 		
 	function displayGif() {
-		console.log(this);
-        var team = $(this).attr("data-name");
-		
-       	var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + team + "&api_key=dc6zaTOxFJmzC";
+		$(".gifs").empty();
+		var team = $(this).attr("data-name");
+		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + team + "&api_key=dc6zaTOxFJmzC";
        
         $.ajax({
           url: queryURL,
