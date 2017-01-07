@@ -47,7 +47,7 @@ $(document).ready(function() {
         }).done(function(response) {
 			console.log(response);
 			
-			for (var i = 0; i < 10; i++) {
+			for (var i = 0; i < 9; i++) {
 				var imgUrl = response.data[i].images.fixed_width_still.url;
 				imgArray.push(imgUrl);
 				gifUrl.push(response.data[i].images.fixed_width.url);
@@ -72,10 +72,10 @@ $(document).ready(function() {
 					
 				});
 				
-				
 			}
 		});
      }
+
 	
 	 $(document).on("click", ".teams", displayGif);
 	
