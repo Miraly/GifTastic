@@ -1,7 +1,7 @@
 var teams = ["Baltimore Ravens", "Chicago Bears", "Pittsburgh Steelers", "Green Bay Packers", "Indianapolis Colts", "Carolina Panthers", "New England Patriots", "New Orleans Saints", "New York Jets", "New York Giants"];
 
 var gifUrl = [];
-
+var imgArray =[];
 
 $(document).ready(function() {
 	function renderButtons() {
@@ -37,6 +37,7 @@ $(document).ready(function() {
 	function displayGif() {
 		$(".gifs").empty();
 		gifUrl = [];
+		imgArray = [];
 		var team = $(this).attr("data-name");
 		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + team + "&api_key=dc6zaTOxFJmzC";
        
@@ -48,6 +49,7 @@ $(document).ready(function() {
 			
 			for (var i = 0; i < 10; i++) {
 				var imgUrl = response.data[i].images.fixed_width_still.url;
+				imgArray.push(imgUrl);
 				gifUrl.push(response.data[i].images.fixed_width.url);
 				var gifImage = $("<img>");
 
@@ -60,14 +62,21 @@ $(document).ready(function() {
 				//displaying img tag 
 				$(".gifs").prepend(gifImage);
 
-				$(gifImage).on("click", function() {
-					$(this).attr("src", gifUrl[$(this).attr('id')]);
-				});	
-			
+
+				$(gifImage).on('click', function() {
+					if ($(this).attr("src") === imgArray[$(this).attr('id')]) {
+					  $(this).attr("src", gifUrl[$(this).attr('id')]);
+					} else {
+					  $(this).attr("src", imgArray[$(this).attr('id')]);
+					}
+					
+				});
+				
+				
 			}
 		});
      }
 	
 	 $(document).on("click", ".teams", displayGif);
 	
-})
+});
